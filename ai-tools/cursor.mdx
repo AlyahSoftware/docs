@@ -418,3 +418,57 @@ description: "Concise description explaining page purpose and value"
 - Use **ParamField** for API parameters, **ResponseField** for API responses
 - Use **Expandable** for nested object properties or hierarchical information
 ````
+
+## Step-by-step workflow
+
+Follow this repeatable workflow to get consistent, high-quality output from Cursor on documentation tasks.
+
+<Steps>
+<Step title="Prepare your environment">
+  Install Cursor, clone your documentation repository locally, and open the project so Cursor can index every file.
+
+  <Tip>
+  Keep the repo synchronized with your main branch so Cursor always sees recent changes.
+  </Tip>
+</Step>
+
+<Step title="Add shared project rules">
+  Create the `.cursor/rules.md` file (or update it) with the Mintlify guidance in this document so everyone prompting Cursor references the same standards.
+
+  ```bash
+  mkdir -p .cursor
+  cat > .cursor/rules.md <<'EOF'
+  # Mintlify technical writing rule
+  ...
+  EOF
+  ```
+</Step>
+
+<Step title="Index and explore the repository">
+  Use Cursor's search and file explorer to skim existing docs, identify patterns, and note component usage before drafting new content.
+
+  <Info>
+  Pin frequently referenced files so they stay accessible while you work.
+  </Info>
+</Step>
+
+<Step title="Craft focused prompts">
+  Describe the user goal, reference relevant sections of `rules.md`, and provide necessary context (API schema, existing docs, constraints) so Cursor can deliver precise drafts.
+
+  <Warning>
+  Avoid vague prompts; specify target page, audience, and required Mintlify components.
+  </Warning>
+</Step>
+
+<Step title="Review and refine drafts">
+  Edit Cursor's output to align with voice, verify accuracy, and cross-check examples or code snippets before committing changes.
+
+  <Check>
+  Confirm every code block runs and that frontmatter meets the required structure.
+  </Check>
+</Step>
+
+<Step title="Validate and share learnings">
+  Run any linked tests, preview the doc, and capture improvements or prompt tweaks back in `rules.md` so the team maintains a living knowledge base.
+</Step>
+</Steps>
